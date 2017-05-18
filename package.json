@@ -1,5 +1,5 @@
 {
-  "name": "webpack-p5js",
+  "name": "p5js-sketchbook",
   "version": "1.0.0",
   "description": "",
   "main": "webpack.config.js",
