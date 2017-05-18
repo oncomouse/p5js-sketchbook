@@ -4,6 +4,7 @@ var p5 = require('p5');
 // import p5 from 'p5';
 
 var canvas, width, interval;
+var mouseVector;
 
 window.setup = function() {
 	canvas = createCanvas(640,480);
@@ -11,6 +12,8 @@ window.setup = function() {
 	canvas.parent('sketch'); 
 	// Set a random width for our circle:
 	width = random(15, 65);
+	// This is a really stupid way to track mouse position, but I'm trying to illustrate why import p5 (see first line) may be necessary:
+	mouseVector = new p5.Vector(mouseX, mouseY);
 	// Change the circle's width every second:
 	interval = setInterval(function() {
 		width = random(15, 65);
@@ -19,12 +22,16 @@ window.setup = function() {
 
 window.draw = function() {
 	background(255)
-	ellipse(mouseX, mouseY, width, width)
+	ellipse(mouseVector.x, mouseVector.y, width, width)
+}
+
+// Other functions p5 expects to be on window have to be assigned to window like so:
+window.mouseMoved = function() {
+	mouseVector.set(mouseX, mouseY)
 }
 
 // This function runs when the user leaves this sketch:
 window.unload = function() {
-	// Stop the random width setting interval (defined in setup)
-	// from running:
+	// Stop the random width setting interval (defined in setup) from running:
 	clearInterval(interval)
 }
