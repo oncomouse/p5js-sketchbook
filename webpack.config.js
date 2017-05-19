@@ -32,7 +32,7 @@ var webpackConfig = {
 	output: {
 		path: path.join(__dirname, 'app', 'build', 'javascripts'),
 		filename: '[name].js',
-		publicPath: '/javascripts/'
+		publicPath: 'javascripts/'
 	},
 	module: {
 		loaders: [
