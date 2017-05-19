@@ -28,7 +28,7 @@ const observer = new MutationObserver((mutations) => {
 		}
 	})
 });
-observer.observe(document.querySelector('body'), { attributes: true, childList: true, characterData: true });
+observer.observe(document.querySelector('body'), { attributes: false, childList: true, characterData: false });
 
 let p5Instance = undefined;
 
