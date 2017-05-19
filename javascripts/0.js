@@ -1,0 +1,1 @@
+webpackJsonp([0],{304:function(n,r,e){"use strict";Object.defineProperty(r,"__esModule",{value:!0}),e.d(r,"randomColor",function(){return o}),e.d(r,"lighten",function(){return t});var o=function(){return color(random(0,255),random(0,255),random(0,255))},t=function(n,r){return color(red(n),green(n),blue(n),map(r,0,1,0,255))}}});

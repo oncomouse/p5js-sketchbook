@@ -1,0 +1,1 @@
+webpackJsonp([1],{303:function(n,e,o){var t,a,u,c,s=o(49);window.setup=function(){t=createCanvas(640,480),t.parent("sketch"),a=random(15,65),c=new s.Vector(mouseX,mouseY),u=setInterval(function(){a=random(15,65)},1e3)},window.draw=function(){background(255),ellipse(c.x,c.y,a,a)},window.mouseMoved=function(){c.set(mouseX,mouseY)},window.unload=function(){clearInterval(u)}}});
