@@ -16,6 +16,20 @@ import Sketchbook from 'components/Sketchbook'
 // Attach to a node:
 const node = document.querySelector('#sketch');
 
+// Create a MutationObserver to correctly attach a sketch to #sketch if the user forgets to do so:
+const observer = new MutationObserver((mutations) => {
+	mutations.forEach((mutation) => {
+		if(mutation.addedNodes.length > 0) {
+			mutation.addedNodes.forEach((addedNode) => {
+				if(addedNode.tagName && addedNode.tagName.toLowerCase() === 'canvas') {
+					node.appendChild(addedNode);
+				}
+			})
+		}
+	})
+});
+observer.observe(document.querySelector('body'), { attributes: true, childList: true, characterData: true });
+
 let p5Instance = undefined;
 
 // Function to generate an asyncComponent when passed a sketch name:

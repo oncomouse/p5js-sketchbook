@@ -3,13 +3,11 @@ var p5 = require('p5');
 // Or (for ES2015 style):
 // import p5 from 'p5';
 
-var canvas, width, interval;
+var width, interval;
 var mouseVector;
 
 window.setup = function() {
-	canvas = createCanvas(640,480);
-	// Attach the parent to our root node:
-	canvas.parent('sketch'); 
+	createCanvas(640,480);
 	// Set a random width for our circle:
 	width = random(15, 65);
 	// This is a really stupid way to track mouse position, but I'm trying to illustrate why import p5 (see first line) may be necessary:
